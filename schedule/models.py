@@ -72,9 +72,9 @@ class Grade(models.Model):
         (11, '11'),
         (12, '12'),
     ]
-    
+
     grade = models.IntegerField(choices=GRADES_CHOICES)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='grades')
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='grades')
 
